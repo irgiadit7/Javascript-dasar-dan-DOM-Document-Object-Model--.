@@ -1,0 +1,81 @@
+>TIPE DATA 
+
+      Tipe Data di JavaScript
+
+      1. Primitives
+      let teks = "Hello";       // String
+      let angka = 123;          // Number
+      let besar = 123n;         // BigInt
+      let benar = true;         // Boolean
+      let kosong = null;        // Null
+      let belum;                // Undefined
+      let unik = Symbol("id");  // Symbol
+      
+      2. Reference (Object)
+      let obj = { nama: "Tama", umur: 25 }; // Object
+      let arr = [1, 2, 3];                  // Array
+      function sapa() { return "Hai!"; }    // Function
+      let map = new Map();                  // Map
+      let set = new Set();                  // Set
+      
+      Primitives = String, Number, BigInt, Boolean, Null, Undefined, Symbol.
+      Reference = Object (termasuk Array, Function, Map, Set, dll).
+
+
+
+>OPERATOR 
+
+      // 1. Aritmatika
+      let a = 10, b = 3;
+      console.log(a + b); // 13  (tambah)
+      console.log(a - b); // 7   (kurang)
+      console.log(a * b); // 30  (kali)
+      console.log(a / b); // 3.33 (bagi)
+      console.log(a % b); // 1   (sisa bagi / modulus)
+      console.log(a ** b); // 1000 (pangkat)
+      
+      // 2. Penugasan
+      let x = 5;
+      x += 2; // sama dengan x = x + 2
+      x -= 1; // sama dengan x = x - 1
+      x *= 3; // sama dengan x = x * 3
+      x /= 2; // sama dengan x = x / 2
+      x %= 2; // sama dengan x = x % 2
+      
+      // 3. Perbandingan (hasilnya boolean: true/false)
+      console.log(5 == "5");   // true  (sama nilai, tipe diabaikan)
+      console.log(5 === "5");  // false (sama nilai DAN tipe)
+      console.log(5 != 3);     // true
+      console.log(5 !== "5");  // true
+      console.log(5 > 3);      // true
+      console.log(5 < 3);      // false
+      console.log(5 >= 5);     // true
+      
+      // 4. Logika
+      console.log(true && false); // false (AND)
+      console.log(true || false); // true  (OR)
+      console.log(!true);         // false (NOT)
+      
+      // 5. Unary
+      let y = 5;
+      console.log(+y);  // 5 (positif)
+      console.log(-y);  // -5 (negatif)
+      console.log(++y); // 6 (increment sebelum pakai)
+      console.log(y++); // 6 (pakai dulu baru tambah 1)
+      
+      // 6. Ternary (if singkat)
+      let umur = 18;
+      let status = (umur >= 18) ? "Dewasa" : "Anak";
+      console.log(status); // Dewasa
+      
+      // 7. Type
+      console.log(typeof 123);    // "number"
+      console.log(typeof "Halo"); // "string"
+
+    Aritmatika → + - * / % **
+    Penugasan → = += -= *= /= %=
+    Perbandingan → == === != !== > < >= <=
+    Logika → && || !
+    Unary → + - ++ --
+    Ternary → condition ? expr1 : expr2
+    Type → typeof
