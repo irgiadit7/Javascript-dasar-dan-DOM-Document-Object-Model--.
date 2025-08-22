@@ -79,3 +79,98 @@
     Unary → + - ++ --
     Ternary → condition ? expr1 : expr2
     Type → typeof
+
+>VARIABLE
+
+// Cara deklarasi variabel
+
+var nama = "Tama";   // var (lama, masih bisa dipakai tapi jarang direkomendasikan)
+let umur = 20;       // let (modern, bisa diubah nilainya)
+const pi = 3.14;     // const (konstan, tidak bisa diubah)
+
+// Contoh penggunaan
+let x = 5;
+x = 10;              // bisa diubah
+
+const y = 7;
+// y = 15;           // ❌ Error, const tidak bisa diubah
+
+
+var → scope global/function, bisa redeclare, jarang dipakai.
+let → scope block, bisa diubah nilainya.
+const → scope block, nilainya tetap (tidak bisa di-reassign).
+
+>POP-UP BOX
+
+// 1. Alert (menampilkan pesan saja)
+alert("Halo, ini pop up!");
+
+// 2. Confirm (pop up dengan OK / Cancel → return true/false)
+let konfirmasi = confirm("Apakah kamu yakin?");
+if (konfirmasi) {
+  alert("Kamu klik OK");
+} else {
+  alert("Kamu klik Cancel");
+}
+
+// 3. Prompt (pop up input teks dari user)
+let nama = prompt("Siapa namamu?");
+alert("Halo " + nama);
+
+alert() → pesan info
+confirm() → pesan + pilihan (OK/Cancel)
+prompt() → pesan + input teks
+
+
+>CONTROL FLOW
+
+// 1. If - Else
+let umur = 18;
+if (umur >= 18) {
+  console.log("Dewasa");
+} else {
+  console.log("Belum Dewasa");
+}
+
+// 2. Else If
+let nilai = 80;
+if (nilai >= 90) {
+  console.log("A");
+} else if (nilai >= 75) {
+  console.log("B");
+} else {
+  console.log("C");
+}
+
+// 3. Switch
+let hari = "Senin";
+switch (hari) {
+  case "Senin":
+    console.log("Awal minggu");
+    break;
+  case "Jumat":
+    console.log("Hampir weekend");
+    break;
+  default:
+    console.log("Hari biasa");
+}
+
+// 4. Looping
+for (let i = 1; i <= 3; i++) {
+  console.log("Perulangan ke-" + i);
+}
+
+let j = 1;
+while (j <= 3) {
+  console.log("While ke-" + j);
+  j++;
+}
+
+let k = 1;
+do {
+  console.log("Do-While ke-" + k);
+  k++;
+} while (k <= 3);
+
+Percabangan → if, else if, else, switch
+Perulangan → for, while, do...while
