@@ -82,95 +82,204 @@
 
 >VARIABLE
 
-// Cara deklarasi variabel
-
-var nama = "Tama";   // var (lama, masih bisa dipakai tapi jarang direkomendasikan)
-let umur = 20;       // let (modern, bisa diubah nilainya)
-const pi = 3.14;     // const (konstan, tidak bisa diubah)
-
-// Contoh penggunaan
-let x = 5;
-x = 10;              // bisa diubah
-
-const y = 7;
-// y = 15;           // ❌ Error, const tidak bisa diubah
-
-
-var → scope global/function, bisa redeclare, jarang dipakai.
-let → scope block, bisa diubah nilainya.
-const → scope block, nilainya tetap (tidak bisa di-reassign).
+      // Cara deklarasi variabel
+      
+      var nama = "Tama";   // var (lama, masih bisa dipakai tapi jarang direkomendasikan)
+      let umur = 20;       // let (modern, bisa diubah nilainya)
+      const pi = 3.14;     // const (konstan, tidak bisa diubah)
+      
+      // Contoh penggunaan
+      let x = 5;
+      x = 10;              // bisa diubah
+      
+      const y = 7;
+      // y = 15;           // ❌ Error, const tidak bisa diubah
+      
+      
+      var → scope global/function, bisa redeclare, jarang dipakai.
+      let → scope block, bisa diubah nilainya.
+      const → scope block, nilainya tetap (tidak bisa di-reassign).
 
 >POP-UP BOX
 
-// 1. Alert (menampilkan pesan saja)
-alert("Halo, ini pop up!");
-
-// 2. Confirm (pop up dengan OK / Cancel → return true/false)
-let konfirmasi = confirm("Apakah kamu yakin?");
-if (konfirmasi) {
-  alert("Kamu klik OK");
-} else {
-  alert("Kamu klik Cancel");
-}
-
-// 3. Prompt (pop up input teks dari user)
-let nama = prompt("Siapa namamu?");
-alert("Halo " + nama);
-
-alert() → pesan info
-confirm() → pesan + pilihan (OK/Cancel)
-prompt() → pesan + input teks
-
+      // 1. Alert (menampilkan pesan saja)
+      alert("Halo, ini pop up!");
+      
+      // 2. Confirm (pop up dengan OK / Cancel → return true/false)
+      let konfirmasi = confirm("Apakah kamu yakin?");
+      if (konfirmasi) {
+        alert("Kamu klik OK");
+      } else {
+        alert("Kamu klik Cancel");
+      }
+      
+      // 3. Prompt (pop up input teks dari user)
+      let nama = prompt("Siapa namamu?");
+      alert("Halo " + nama);
+      
+      alert() → pesan info
+      confirm() → pesan + pilihan (OK/Cancel)
+      prompt() → pesan + input teks
+      
 
 >CONTROL FLOW
 
-// 1. If - Else
-let umur = 18;
-if (umur >= 18) {
-  console.log("Dewasa");
-} else {
-  console.log("Belum Dewasa");
-}
+      // 1. If - Else
+      let umur = 18;
+      if (umur >= 18) {
+        console.log("Dewasa");
+      } else {
+        console.log("Belum Dewasa");
+      }
+      
+      // 2. Else If
+      let nilai = 80;
+      if (nilai >= 90) {
+        console.log("A");
+      } else if (nilai >= 75) {
+        console.log("B");
+      } else {
+        console.log("C");
+      }
+      
+      // 3. Switch
+      let hari = "Senin";
+      switch (hari) {
+        case "Senin":
+          console.log("Awal minggu");
+          break;
+        case "Jumat":
+          console.log("Hampir weekend");
+          break;
+        default:
+          console.log("Hari biasa");
+      }
+      
+      // 4. Looping
+      for (let i = 1; i <= 3; i++) {
+        console.log("Perulangan ke-" + i);
+      }
+      
+      let j = 1;
+      while (j <= 3) {
+        console.log("While ke-" + j);
+        j++;
+      }
+      
+      let k = 1;
+      do {
+        console.log("Do-While ke-" + k);
+        k++;
+      } while (k <= 3);
+      
+      Percabangan → if, else if, else, switch
+      Perulangan → for, while, do...while
 
-// 2. Else If
-let nilai = 80;
-if (nilai >= 90) {
-  console.log("A");
-} else if (nilai >= 75) {
-  console.log("B");
-} else {
-  console.log("C");
-}
+>FUNCTION
 
-// 3. Switch
-let hari = "Senin";
-switch (hari) {
-  case "Senin":
-    console.log("Awal minggu");
-    break;
-  case "Jumat":
-    console.log("Hampir weekend");
-    break;
-  default:
-    console.log("Hari biasa");
-}
+      // 1. Function Declaration (cara klasik)
+      function sapa(nama) {
+        return "Halo " + nama;
+      }
+      console.log(sapa("Irgi")); // Output: Halo Irgi
+      
+      // 2. Function Expression (disimpan ke variabel)
+      const tambah = function(a, b) {
+        return a + b;
+      };
+      console.log(tambah(5, 3)); // Output: 8
+      
+      // 3. Arrow Function (cara modern & singkat)
+      const kali = (a, b) => a * b;
+      console.log(kali(4, 2)); // Output: 8
+      
+      // 4. Default Parameter (nilai otomatis kalau tidak diisi)
+      function greet(nama = "Anonim") {
+        return "Halo " + nama;
+      }
+      console.log(greet());       // Output: Halo Anonim
+      console.log(greet("Tama")); // Output: Halo Tama
+      
+      // 5. Rest Parameter (menampung banyak nilai sekaligus)
+      function jumlahkan(...angka) {
+        let total = 0;
+        for (let i of angka) {
+          total += i;
+        }
+        return total;
+      }
+      console.log(jumlahkan(1, 2, 3, 4, 5)); // Output: 15
 
-// 4. Looping
-for (let i = 1; i <= 3; i++) {
-  console.log("Perulangan ke-" + i);
-}
+      Function Declaration → cara klasik, bisa dipanggil sebelum ditulis.
+      Function Expression → function disimpan ke variabel.
+      Arrow Function → versi modern, lebih ringkas.
+      Default Parameter → kalau tidak kasih nilai, dia pakai default.
+      Rest Parameter → bisa menampung banyak angka jadi satu array.
 
-let j = 1;
-while (j <= 3) {
-  console.log("While ke-" + j);
-  j++;
-}
 
-let k = 1;
-do {
-  console.log("Do-While ke-" + k);
-  k++;
-} while (k <= 3);
+>ARRAY
 
-Percabangan → if, else if, else, switch
-Perulangan → for, while, do...while
+      Array = wadah/daftar untuk menyimpan banyak data dalam satu variabel.
+      Kalau variabel biasa cuma simpan 1 data, array bisa simpan banyak data sekaligus.
+
+     *kode dasar array
+      // Membuat array
+      let buah = ["Apel", "Jeruk", "Mangga"];
+      
+      // Akses isi array
+      console.log(buah[0]); // Apel
+      console.log(buah[1]); // Jeruk
+      
+      // Panjang array
+      console.log(buah.length); // 3
+
+
+      *menambah & menghapus
+      let warna = ["Merah", "Hijau"];
+      
+      // Tambah di akhir
+      warna.push("Biru");
+      console.log(warna); // ["Merah", "Hijau", "Biru"]
+      
+      // Hapus di akhir
+      warna.pop();
+      console.log(warna); // ["Merah", "Hijau"]
+      
+      // Tambah di depan
+      warna.unshift("Kuning");
+      console.log(warna); // ["Kuning", "Merah", "Hijau"]
+      
+      // Hapus di depan
+      warna.shift();
+      console.log(warna); // ["Merah", "Hijau"]
+
+
+      *looping
+      let angka = [10, 20, 30];
+
+      // for biasa
+      for (let i = 0; i < angka.length; i++) {
+        console.log(angka[i]);
+      }
+      
+      // for...of (lebih singkat)
+      for (let item of angka) {
+        console.log(item);
+      }
+
+
+      *method populer
+
+      let angka = [1, 2, 3, 4, 5];
+      
+      // map → ubah setiap isi array
+      let kali2 = angka.map(x => x * 2);
+      console.log(kali2); // [2, 4, 6, 8, 10]
+      
+      // filter → pilih sesuai kondisi
+      let genap = angka.filter(x => x % 2 === 0);
+      console.log(genap); // [2, 4]
+      
+      // reduce → jumlahkan semua
+      let total = angka.reduce((sum, x) => sum + x, 0);
+      console.log(total); // 15
