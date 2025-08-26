@@ -283,3 +283,56 @@
       // reduce → jumlahkan semua
       let total = angka.reduce((sum, x) => sum + x, 0);
       console.log(total); // 15
+
+>OBJECT
+      🔹 Cara Membuat Object
+      // Cara 1: Menggunakan literal
+      let orang = {
+        nama: "Irgi",
+        umur: 22,
+        pekerjaan: "Web Developer"
+      };
+      
+      // Cara 2: Menggunakan new Object()
+      let mobil = new Object();
+      mobil.merk = "Toyota";
+      mobil.tahun = 2022;
+
+      🔹 Mengakses Properti
+      console.log(orang.nama);    // "Irgi"
+      console.log(orang["umur"]); // 22
+
+      🔹 Menambah / Mengubah Properti
+      orang.hobi = "Coding";       // tambah properti baru
+      orang.umur = 23;             // ubah nilai
+      console.log(orang);
+      
+      🔹 Menghapus Properti
+      delete orang.pekerjaan;
+      console.log(orang);
+      
+      🔹 Object Bisa Berisi Function (Method)
+      let laptop = {
+        merk: "Asus",
+        nyala: function() {
+          return "Laptop menyala...";
+        }
+      };
+      
+      console.log(laptop.nyala()); // "Laptop menyala..."
+      
+      🔹 Object Bersarang (Nested Object)
+      let siswa = {
+        nama: "Budi",
+        alamat: {
+          kota: "Jakarta",
+          kodePos: 12345
+        }
+      };
+      
+      console.log(siswa.alamat.kota); // "Jakarta"
+      
+      
+      👉 Singkatnya:
+      Object = kumpulan key-value
+      Bisa menyimpan string, number, array, function, bahkan object lain
