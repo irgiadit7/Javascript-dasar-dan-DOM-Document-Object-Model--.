@@ -336,3 +336,4 @@
       👉 Singkatnya:
       Object = kumpulan key-value
       Bisa menyimpan string, number, array, function, bahkan object lain
+ 
