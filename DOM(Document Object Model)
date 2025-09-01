@@ -1,0 +1,103 @@
+  1. Pendahuluan
+    DOM (Document Object Model) = jembatan antara JavaScript & HTML.
+    Dengan DOM, kita bisa:
+    - Mengambil elemen
+    - Mengubah isi/style
+    - Menangani event (klik, input, dll)
+  
+    Browser baca HTML → jadi "DOM Tree" → bisa diakses pakai JavaScript.
+
+
+  2. DOM Tree
+    Struktur HTML dibaca seperti pohon:
+    <html>
+      <head>...</head>
+      <body>
+        <h1>Judul</h1>
+        <p>Paragraf</p>
+      </body>
+    </html>
+  
+    html → root
+    head, body → child
+    h1, p → child dari body
+
+
+  3. DOM Selection
+    // Ambil elemen dari HTML
+    document.getElementById("judul");
+    document.getElementsByClassName("item");
+    document.getElementsByTagName("p");
+  
+    // Modern (lebih sering dipakai)
+    document.querySelector("#judul");   // by id
+    document.querySelector(".item");    // by class
+    document.querySelectorAll("p");     // semua <p>
+  
+
+  4. DOM Manipulation
+    let el = document.querySelector("h1");
+  
+    // Ubah isi
+    el.textContent = "Halo Dunia";
+    el.innerHTML = "<i>Halo Dunia</i>";
+  
+    // Ubah style
+    el.style.color = "red";
+    el.style.fontSize = "30px";
+  
+    // Tambah/Hapus class
+    el.classList.add("aktif");
+    el.classList.remove("aktif");
+
+
+  5. DOM Events
+  // Menangkap interaksi user
+    let btn = document.querySelector("#klik");
+  
+    btn.addEventListener("click", function() {
+      alert("Tombol diklik!");
+    });
+  
+    // Event umum: click, mouseover, keydown, input, submit
+  
+
+  6. Prevent Default
+    // Mencegah aksi bawaan browser
+    let link = document.querySelector("a");
+  
+    link.addEventListener("click", function(e) {
+      e.preventDefault(); // cegah buka link
+      alert("Link dicegah!");
+    });
+
+
+  7. Event Bubbling
+      Event naik ke atas (dari child → parent).
+    
+      <div id="parent">
+        <button id="child">Klik</button>
+      </div>
+    
+      document.getElementById("parent").addEventListener("click", () => {
+        alert("Parent diklik");
+      });
+    
+      document.getElementById("child").addEventListener("click", () => {
+        alert("Child diklik");
+      });
+  
+      // Kalau klik button:
+      // 1. Child jalan
+      // 2. Event "naik" → Parent jalan
+    
+    👉 Bisa dihentikan dengan e.stopPropagation();
+  
+  
+    👉 Singkatnya:
+    - DOM = cara JS akses HTML
+    - Selection = ambil elemen
+    - Manipulation = ubah isi/style
+    - Events = respon interaksi
+    - preventDefault() = cegah aksi default
+    - Event Bubbling = event naik ke parent
