@@ -12,7 +12,7 @@
       let unik = Symbol("id");  // Symbol
       
       2. Reference (Object)
-      let obj = { nama: "Tama", umur: 25 }; // Object
+      let obj = { nama: "Irgi", umur: 25 }; // Object
       let arr = [1, 2, 3];                  // Array
       function sapa() { return "Hai!"; }    // Function
       let map = new Map();                  // Map
@@ -198,7 +198,7 @@
         return "Halo " + nama;
       }
       console.log(greet());       // Output: Halo Anonim
-      console.log(greet("Tama")); // Output: Halo Tama
+      console.log(greet("Irgi")); // Output: Halo irgi
       
       // 5. Rest Parameter (menampung banyak nilai sekaligus)
       function jumlahkan(...angka) {
@@ -290,7 +290,7 @@
       let orang = {
         nama: "Irgi",
         umur: 22,
-        pekerjaan: "Web Developer"
+        pekerjaan: "fsd"
       };
       
       // Cara 2: Menggunakan new Object()
@@ -313,7 +313,7 @@
       
       🔹 Object Bisa Berisi Function (Method)
       let laptop = {
-        merk: "Asus",
+        merk: "Lenovo",
         nyala: function() {
           return "Laptop menyala...";
         }
